@@ -18,7 +18,7 @@ public class Covid19BaseController {
 		//System.out.println(service.getMainData());
 		model.addAttribute("allStats", service.getMainData());
 		System.out.println();
-		//model.addAttribute("totalConformed", service.getTotalConformed(service.getMainData()));
+		model.addAttribute("totalConformed", service.getTotalConformed(service.getMainData()));
 		return "covid19landing";
 	}
 }

@@ -93,9 +93,11 @@ public class Covid19Service {
 							
 							) {
 						AggregateUIModel uiModel = new AggregateUIModel();
-						System.out.println(d.getCountryRegion() + " || " + d.getProvinceState() + "|| Recoverd "
-								+ d.getLatestConformedCases() + " Conformed " + e.getLatestConformedCases() + " Dead "
-								+ f.getLatestConformedCases());
+						/*
+						 * System.out.println(d.getCountryRegion() + " || " + d.getProvinceState() +
+						 * "|| Recoverd " + d.getLatestConformedCases() + " Conformed " +
+						 * e.getLatestConformedCases() + " Dead " + f.getLatestConformedCases());
+						 */
 						 
 						uiModel.setCountryRegion(d.getCountryRegion());
 						uiModel.setProvinceState(d.getProvinceState());
@@ -110,8 +112,8 @@ public class Covid19Service {
 		return uiModelList;
 	}
 	
-	public Integer getTotalConformed(ArrayList<Covid19DataVO> mainData) {
-		Integer total = mainData.stream().mapToInt(stat -> stat.getLatestConformedCases()).sum();
+	public Integer getTotalConformed(ArrayList<AggregateUIModel> mainData) {
+		Integer total = mainData.stream().mapToInt(stat -> stat.getConformed()).sum();
 		return total;
 	}
 }
